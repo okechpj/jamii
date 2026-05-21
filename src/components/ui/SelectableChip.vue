@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   label: string
   selected?: boolean
 }>()
@@ -16,7 +16,7 @@ const emit = defineEmits<{
     class="flex items-center px-4 py-2.5 rounded-full border text-sm font-medium transition-colors w-full sm:w-auto mb-3"
     :class="[
       selected
-        ? 'bg-teal-100 border-teal-200 text-teal-800'
+        ? 'bg-brand-indigo border-brand-indigo text-white'
         : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50',
     ]"
   >

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import BaseButton from '@/components/ui/BaseButton.vue'
 
 defineProps<{
   post: {
@@ -18,20 +17,20 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white px-4 py-5 border-b border-gray-100">
+  <div class="bg-white px-4 py-5 border-b border-slate-100">
     <!-- Header -->
     <div class="flex justify-between items-start mb-3">
       <div class="flex items-center space-x-3">
-        <div class="h-10 w-10 rounded-full overflow-hidden bg-gray-200">
+        <div class="h-10 w-10 rounded-full overflow-hidden bg-slate-100">
           <img :src="post.userAvatar" :alt="post.userName" class="h-full w-full object-cover" />
         </div>
         <div>
           <div class="flex items-center">
-            <h3 class="font-bold text-gray-900 text-sm">{{ post.userName }}</h3>
+            <h3 class="font-bold text-brand-indigo text-sm">{{ post.userName }}</h3>
             <svg
               v-if="post.verified"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-teal-600 ml-1"
+              class="h-4 w-4 text-brand-indigo ml-1"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -42,7 +41,7 @@ defineProps<{
               />
             </svg>
           </div>
-          <p class="text-xs text-gray-500">{{ post.time }}</p>
+          <p class="text-xs text-brand-slate">{{ post.time }}</p>
         </div>
       </div>
       <button class="text-gray-400 hover:text-gray-600 focus:outline-none">
@@ -65,8 +64,8 @@ defineProps<{
 
     <!-- Content -->
     <div class="mb-3">
-      <p class="text-sm text-gray-800 leading-snug whitespace-pre-line">{{ post.caption }}</p>
-      <div v-if="post.image" class="mt-3 rounded-lg overflow-hidden max-h-80 bg-gray-100">
+      <p class="text-sm text-brand-indigo leading-snug whitespace-pre-line">{{ post.caption }}</p>
+      <div v-if="post.image" class="mt-3 rounded-xl overflow-hidden max-h-80 bg-slate-100">
         <img
           :src="post.image"
           alt="Post content"
@@ -78,8 +77,8 @@ defineProps<{
 
     <!-- Actions -->
     <div class="flex items-center justify-between pt-2">
-      <div class="flex space-x-6 text-gray-500 text-sm">
-        <button class="flex items-center space-x-1.5 hover:text-teal-600 transition-colors">
+      <div class="flex space-x-6 text-brand-slate text-sm">
+        <button class="flex items-center space-x-1.5 hover:text-brand-indigo transition-colors">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -96,7 +95,7 @@ defineProps<{
           </svg>
           <span>{{ post.likes }}</span>
         </button>
-        <button class="flex items-center space-x-1.5 hover:text-teal-600 transition-colors">
+        <button class="flex items-center space-x-1.5 hover:text-brand-indigo transition-colors">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -113,7 +112,7 @@ defineProps<{
           </svg>
           <span>{{ post.comments }}</span>
         </button>
-        <button class="flex items-center space-x-1.5 hover:text-teal-600 transition-colors">
+        <button class="flex items-center space-x-1.5 hover:text-brand-indigo transition-colors">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -133,7 +132,7 @@ defineProps<{
       </div>
 
       <button
-        class="bg-[#8B4513] hover:bg-[#6e3710] text-white text-xs font-semibold py-1.5 px-4 rounded-lg transition-colors shadow-sm"
+        class="bg-brand-gold hover:bg-brand-gold-hover text-brand-indigo text-xs font-bold py-1.5 px-4 rounded-xl transition-colors shadow-sm"
       >
         Connect
       </button>

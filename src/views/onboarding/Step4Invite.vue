@@ -32,7 +32,22 @@ const handleFinish = () => {
   <div class="flex flex-col h-full">
     <div class="text-center mb-8 flex flex-col items-center">
       <!-- Icon -->
-      <div class="h-16 w-16 bg-gray-100 rounded-full mb-4"></div>
+      <div class="h-16 w-16 bg-brand-indigo/10 rounded-full mb-4 flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-brand-gold"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+          />
+        </svg>
+      </div>
 
       <h2 class="text-2xl font-bold text-gray-900 mb-2">Grow your Jamii</h2>
       <p class="text-sm text-gray-500">
@@ -43,11 +58,11 @@ const handleFinish = () => {
 
     <div class="flex-1 flex flex-col space-y-6">
       <!-- Referral Link Box -->
-      <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 text-center">
+      <div class="bg-brand-offwhite p-6 rounded-xl border border-slate-100 text-center">
         <p class="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider">
           Your Referral Link
         </p>
-        <div class="bg-gray-200 text-gray-700 py-3 px-4 rounded-lg font-medium mb-4">
+        <div class="bg-slate-100 text-slate-700 py-3 px-4 rounded-lg font-medium mb-4">
           {{ referralLink }}
         </div>
         <BaseButton type="button" block @click="copyLink">
@@ -60,7 +75,7 @@ const handleFinish = () => {
         <p class="text-xs font-semibold text-gray-500 mb-4 uppercase tracking-wider">Share Via</p>
         <div class="flex justify-center space-x-6">
           <button
-            class="text-xs text-gray-600 flex flex-col items-center space-y-2 hover:text-teal-600"
+            class="text-xs text-gray-600 flex flex-col items-center space-y-2 hover:text-brand-indigo"
           >
             <div class="h-10 w-10 bg-gray-100 rounded-full flex items-center justify-center">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -73,7 +88,7 @@ const handleFinish = () => {
           </button>
 
           <button
-            class="text-xs text-gray-600 flex flex-col items-center space-y-2 hover:text-teal-600"
+            class="text-xs text-gray-600 flex flex-col items-center space-y-2 hover:text-brand-indigo"
           >
             <div class="h-10 w-10 bg-gray-100 rounded-full flex items-center justify-center">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -88,7 +103,7 @@ const handleFinish = () => {
           </button>
 
           <button
-            class="text-xs text-gray-600 flex flex-col items-center space-y-2 hover:text-teal-600"
+            class="text-xs text-gray-600 flex flex-col items-center space-y-2 hover:text-brand-indigo"
           >
             <div class="h-10 w-10 bg-gray-100 rounded-full flex items-center justify-center">
               <svg

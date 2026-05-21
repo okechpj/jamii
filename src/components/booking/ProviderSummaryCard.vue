@@ -9,21 +9,21 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-4 relative">
+  <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 mb-4 relative">
     <!-- Score Badge -->
     <div
-      class="absolute top-4 right-4 bg-amber-200 text-amber-900 text-[10px] font-bold px-2 py-1 rounded-md"
+      class="absolute top-4 right-4 bg-brand-indigo text-white text-[10px] font-bold px-2 py-1 rounded-xl shadow-xs"
     >
       Score {{ score }}
     </div>
 
     <div class="flex items-center space-x-4">
       <div class="relative h-16 w-16 flex-shrink-0">
-        <div class="h-full w-full rounded-full overflow-hidden bg-gray-200">
+        <div class="h-full w-full rounded-full overflow-hidden bg-brand-indigo/5">
           <img :src="providerAvatar" :alt="providerName" class="h-full w-full object-cover" />
         </div>
         <div
-          class="absolute bottom-0 right-0 bg-teal-600 rounded-full p-0.5 border-2 border-white text-white"
+          class="absolute bottom-0 right-0 bg-brand-indigo rounded-full p-0.5 border border-white text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,11 +41,11 @@ defineProps<{
       </div>
 
       <div class="flex-1 min-w-0 pr-12">
-        <h2 class="text-lg font-bold text-gray-900 truncate">{{ providerName }}</h2>
-        <p class="text-xs font-bold text-teal-700 truncate mb-2">{{ providerTitle }}</p>
+        <h2 class="text-lg font-bold text-brand-indigo truncate">{{ providerName }}</h2>
+        <p class="text-xs font-bold text-brand-indigo truncate mb-2">{{ providerTitle }}</p>
 
         <div class="flex flex-col space-y-1">
-          <div class="flex items-center text-[10px] font-medium text-gray-600">
+          <div class="flex items-center text-[10px] font-medium text-brand-slate">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-3.5 w-3.5 mr-1"
@@ -68,7 +68,7 @@ defineProps<{
             </svg>
             {{ location }}
           </div>
-          <div class="flex items-center text-[10px] font-medium text-gray-600">
+          <div class="flex items-center text-[10px] font-medium text-brand-slate">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-3.5 w-3.5 mr-1"

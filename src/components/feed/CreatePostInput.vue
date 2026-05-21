@@ -5,17 +5,17 @@ const { openCreatePostModal } = useModal()
 </script>
 
 <template>
-  <div class="bg-white px-4 py-4 border-b border-gray-100">
-    <h2 class="text-sm font-bold text-gray-900 mb-3">Ungana na Jamii</h2>
+  <div class="bg-white px-4 py-4 border-b border-slate-100">
+    <h2 class="text-sm font-bold text-brand-indigo mb-3">Ungana na Jamii</h2>
     <div class="flex items-center space-x-3">
       <!-- Input box -->
       <div
         @click="openCreatePostModal"
-        class="flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-full px-4 py-2 hover:bg-gray-100 transition-colors cursor-text"
+        class="flex-1 flex items-center bg-brand-offwhite border border-slate-200 rounded-xl px-4 py-2 hover:bg-slate-100 transition-colors cursor-text"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-gray-400 mr-2"
+          class="h-5 w-5 text-brand-slate mr-2"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -27,13 +27,13 @@ const { openCreatePostModal } = useModal()
             d="M12 4v16m8-8H4"
           />
         </svg>
-        <span class="text-sm text-gray-400">Create a post....</span>
+        <span class="text-sm text-brand-slate">Create a post....</span>
       </div>
 
       <!-- Image Upload Icon -->
       <button
         @click="openCreatePostModal"
-        class="p-2 text-gray-500 hover:text-teal-600 focus:outline-none"
+        class="p-2 text-brand-slate hover:text-brand-indigo focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

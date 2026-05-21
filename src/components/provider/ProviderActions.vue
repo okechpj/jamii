@@ -4,10 +4,10 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 
 <template>
   <div
-    class="bg-white/80 backdrop-blur-md border-t border-gray-200 p-4 sticky bottom-0 z-50 flex items-center justify-end space-x-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]"
+    class="bg-white/95 backdrop-blur-md border-t border-slate-200 p-4 sticky bottom-0 z-50 flex items-center justify-end space-x-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]"
   >
     <button
-      class="h-12 w-12 rounded-xl border border-gray-300 text-amber-900 flex items-center justify-center hover:bg-amber-50 focus:outline-none transition-colors"
+      class="h-12 w-12 rounded-xl border border-slate-200 text-brand-indigo flex items-center justify-center hover:bg-slate-50 focus:outline-none transition-colors"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
     </button>
 
     <button
-      class="h-12 w-12 rounded-xl border border-gray-300 text-amber-900 flex items-center justify-center hover:bg-amber-50 focus:outline-none transition-colors"
+      class="h-12 w-12 rounded-xl border border-slate-200 text-brand-indigo flex items-center justify-center hover:bg-slate-50 focus:outline-none transition-colors"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +44,8 @@ import BaseButton from '@/components/ui/BaseButton.vue'
       </svg>
     </button>
 
-    <router-link :to="'/provider/' + ($route.params.id || '1') + '/book'">
-      <BaseButton class="px-8 bg-teal-800 hover:bg-teal-900 border-none shadow-md" type="button">
+    <router-link :to="'/provider/' + ($route.params.id || '1') + '/track'">
+      <BaseButton variant="primary" class="px-8 shadow-md" type="button">
         Book Service
       </BaseButton>
     </router-link>

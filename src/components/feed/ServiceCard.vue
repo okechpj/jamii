@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-defineProps<{
+const props = defineProps<{
   service: {
     id: number
     title: string
@@ -18,14 +18,13 @@ defineProps<{
 }>()
 
 function openProfile() {
-  // @ts-ignore - `service` comes from props in template scope
-  router.push(`/provider/${(service as any).id}`)
+  router.push(`/provider/${props.service.id}`)
 }
 </script>
 
 <template>
   <div
-    class="flex-shrink-0 w-64 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col cursor-pointer"
+    class="flex-shrink-0 w-64 bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col cursor-pointer"
     @click="openProfile"
   >
     <!-- Image with Rating Badge -->
@@ -51,11 +50,11 @@ function openProfile() {
     <!-- Details -->
     <div class="p-3 flex-1 flex flex-col">
       <div class="flex justify-between items-start mb-1">
-        <h3 class="font-bold text-gray-900 text-sm truncate pr-2">{{ service.title }}</h3>
+        <h3 class="font-bold text-brand-indigo text-sm truncate pr-2">{{ service.title }}</h3>
         <svg
           v-if="service.verified"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4 text-teal-500 flex-shrink-0"
+          class="h-4 w-4 text-brand-indigo flex-shrink-0"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -66,18 +65,18 @@ function openProfile() {
           />
         </svg>
       </div>
-      <p class="text-xs text-gray-500 mb-3">{{ service.category }}</p>
+      <p class="text-xs text-brand-slate mb-3">{{ service.category }}</p>
 
       <!-- Provider Info & Review snippet -->
-      <div class="mt-auto flex items-center space-x-2 border-t border-gray-50 pt-2">
-        <div class="h-6 w-6 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
+      <div class="mt-auto flex items-center space-x-2 border-t border-slate-100 pt-2">
+        <div class="h-6 w-6 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
           <img
             :src="service.providerAvatar"
             :alt="service.providerName"
             class="w-full h-full object-cover"
           />
         </div>
-        <p class="text-[11px] text-gray-600 italic truncate" :title="service.review">
+        <p class="text-[11px] text-brand-slate italic truncate" :title="service.review">
           {{ service.review }}
         </p>
       </div>

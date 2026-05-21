@@ -9,10 +9,10 @@ defineProps<{
 <template>
   <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
     <!-- Secure Guarantee Banner -->
-    <div class="bg-teal-50 rounded-xl p-4 mb-6 flex items-start border border-teal-100">
+    <div class="bg-brand-indigo/5 rounded-xl p-4 mb-6 flex items-start border border-brand-indigo/10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 text-teal-700 mr-3 mt-0.5 flex-shrink-0"
+        class="h-5 w-5 text-brand-indigo mr-3 mt-0.5 flex-shrink-0"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -23,8 +23,8 @@ defineProps<{
         />
       </svg>
       <div>
-        <h4 class="text-xs font-bold text-teal-900 mb-0.5">Secure Marketplace Guarantee</h4>
-        <p class="text-[10px] text-teal-800">
+        <h4 class="text-xs font-bold text-brand-indigo mb-0.5">Secure Marketplace Guarantee</h4>
+        <p class="text-[10px] text-[#64748B]">
           Your payment is only released after service confirmation.
         </p>
       </div>
@@ -34,7 +34,7 @@ defineProps<{
     <ul class="space-y-4 mb-8">
       <li v-for="service in services" :key="service.id" class="flex items-center justify-between">
         <span class="text-sm font-medium text-gray-800">{{ service.name }}</span>
-        <span class="text-sm font-bold text-teal-700">{{ service.price }}</span>
+        <span class="text-sm font-bold text-brand-indigo">{{ service.price }}</span>
       </li>
     </ul>
 

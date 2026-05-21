@@ -22,14 +22,14 @@ const handleLogin = async () => {
 
 <template>
   <div
-    class="min-h-screen flex items-center justify-center bg-teal-50 sm:px-6 lg:px-8 py-10 sm:py-12"
+    class="min-h-screen flex items-center justify-center bg-brand-offwhite sm:px-6 lg:px-8 py-10 sm:py-12"
   >
     <div class="max-w-md w-full bg-white sm:rounded-2xl sm:shadow-xl p-6 sm:p-10 space-y-8">
       <!-- Header -->
       <div class="text-center flex flex-col items-center">
         <!-- Logo Icon -->
         <div
-          class="h-16 w-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-4"
+          class="h-16 w-16 bg-brand-indigo/10 text-brand-indigo rounded-full flex items-center justify-center mb-4"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const handleLogin = async () => {
             />
           </svg>
         </div>
-        <h1 class="text-3xl font-extrabold text-amber-800">Jamii Sasa</h1>
+        <h1 class="text-3xl font-extrabold text-brand-indigo">Jamii Sasa</h1>
         <p class="mt-2 text-sm text-gray-500">Welcome back. Please log in to your account.</p>
       </div>
 
@@ -82,7 +82,7 @@ const handleLogin = async () => {
           required
         >
           <template #labelRight>
-            <a href="#" class="text-xs font-semibold text-teal-600 hover:text-teal-500"
+            <a href="#" class="text-xs font-semibold text-brand-indigo hover:text-[#0f172a]"
               >Forgot Password?</a
             >
           </template>
@@ -111,7 +111,7 @@ const handleLogin = async () => {
       <div class="text-center mt-6">
         <p class="text-sm text-gray-600">
           Don't have an account?
-          <RouterLink to="/signup" class="font-bold text-teal-600 hover:text-teal-500"
+          <RouterLink to="/signup" class="font-bold text-brand-indigo hover:text-[#0f172a]"
             >Sign up</RouterLink
           >
         </p>

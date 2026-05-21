@@ -15,8 +15,8 @@ const activeFilter = ref(filters[0])
         class="whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-colors flex-shrink-0 flex items-center border"
         :class="
           activeFilter === filter
-            ? 'bg-teal-800 text-white border-teal-800'
-            : 'bg-orange-50 text-gray-600 border-orange-100 hover:bg-orange-100'
+            ? 'bg-brand-indigo text-white border-brand-indigo'
+            : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
         "
       >
         <svg

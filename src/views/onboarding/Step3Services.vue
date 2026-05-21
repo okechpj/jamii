@@ -29,10 +29,10 @@ const handleContinue = () => {
 <template>
   <div class="flex flex-col h-full">
     <div class="text-center mb-8">
-      <h2 class="text-2xl font-bold text-gray-900 mb-2">
+      <h2 class="text-2xl font-bold text-brand-indigo mb-2">
         Which services would you be interested in?
       </h2>
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-brand-slate">
         Select the categories you want to explore. This helps us tailor your community marketplace
         experience.
       </p>

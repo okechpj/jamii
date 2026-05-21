@@ -13,7 +13,8 @@ const emit = defineEmits<{
     class="bg-white border-t border-gray-100 p-4 sticky bottom-0 z-50 flex flex-col space-y-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)] pt-6 pb-8"
   >
     <BaseButton
-      class="w-full py-4 bg-teal-800 hover:bg-teal-900 border-none shadow-md text-base"
+      variant="primary"
+      class="w-full py-4 shadow-md text-base"
       type="button"
       @click="emit('confirm')"
     >

@@ -29,12 +29,12 @@ const handleSignUp = async () => {
 
 <template>
   <div
-    class="min-h-screen flex items-center justify-center bg-teal-50 sm:px-6 lg:px-8 py-10 sm:py-12"
+    class="min-h-screen flex items-center justify-center bg-brand-offwhite sm:px-6 lg:px-8 py-10 sm:py-12"
   >
     <div class="max-w-md w-full bg-white sm:rounded-2xl sm:shadow-xl p-6 sm:p-10 space-y-6">
       <!-- Header -->
       <div class="text-center">
-        <h2 class="text-xl font-semibold text-amber-800 tracking-tight">Jamii Sasa</h2>
+        <h2 class="text-xl font-semibold text-brand-indigo tracking-tight">Jamii Sasa</h2>
         <h1 class="mt-2 text-3xl font-extrabold text-gray-900">Create Account</h1>
         <p class="mt-2 text-sm text-gray-500">
           Start connecting with your trusted community today.
@@ -108,18 +108,18 @@ const handleSignUp = async () => {
               id="terms"
               v-model="agreeTerms"
               type="checkbox"
-              class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded"
+              class="focus:ring-brand-indigo h-4 w-4 text-brand-indigo border-gray-300 rounded"
               required
             />
           </div>
           <div class="ml-3 text-sm">
             <label for="terms" class="font-medium text-gray-700">
               I agree to the
-              <a href="#" class="text-teal-600 hover:text-teal-500 font-semibold"
+              <a href="#" class="text-brand-indigo hover:text-[#0f172a] font-semibold"
                 >Terms of Service</a
               >
               and
-              <a href="#" class="text-teal-600 hover:text-teal-500 font-semibold">Privacy Policy</a
+              <a href="#" class="text-brand-indigo hover:text-[#0f172a] font-semibold">Privacy Policy</a
               >.
             </label>
           </div>
@@ -134,7 +134,7 @@ const handleSignUp = async () => {
       <div class="text-center mt-6">
         <p class="text-sm text-gray-600">
           Already have an account?
-          <RouterLink to="/login" class="font-bold text-teal-600 hover:text-teal-500"
+          <RouterLink to="/login" class="font-bold text-brand-indigo hover:text-[#0f172a]"
             >Log in here</RouterLink
           >
         </p>

@@ -26,12 +26,12 @@ const filteredProviders = computed(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#1F2937] flex flex-col">
+  <div class="min-h-screen bg-brand-offwhite flex flex-col">
     <!-- Desktop Header (fixed top) -->
     <DesktopHeader />
 
     <!-- Main Content Wrapper -->
-    <div class="flex-1 flex justify-center lg:mt-[64px] bg-gray-100 lg:bg-gray-100">
+    <div class="flex-1 flex justify-center lg:mt-[64px] bg-brand-offwhite">
       <!-- Desktop Left Sidebar -->
       <DesktopSidebarLeft />
 
@@ -46,7 +46,7 @@ const filteredProviders = computed(() => {
           <MarketplaceFilters />
         </div>
 
-        <div class="bg-gray-50 pb-8 min-h-[500px]">
+        <div class="bg-brand-offwhite pb-8 min-h-[500px]">
           <MarketplaceCard
             v-for="provider in filteredProviders"
             :key="provider.id"

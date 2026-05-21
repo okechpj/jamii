@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useOnboardingStore } from '@/stores/onboarding'
 import StepProgress from '@/components/ui/StepProgress.vue'
@@ -19,16 +18,16 @@ const handleBack = () => {
 
 <template>
   <div
-    class="min-h-screen flex items-center justify-center bg-gray-50 sm:px-6 lg:px-8 py-10 sm:py-12"
+    class="min-h-screen flex items-center justify-center bg-brand-offwhite sm:px-6 lg:px-8 py-10 sm:py-12"
   >
     <div
-      class="max-w-md w-full bg-white sm:rounded-2xl sm:shadow-xl p-6 sm:p-10 flex flex-col min-h-screen sm:min-h-[600px] relative"
+      class="max-w-md w-full bg-white sm:rounded-xl sm:shadow-xl p-6 sm:p-10 flex flex-col min-h-screen sm:min-h-[600px] relative"
     >
       <!-- Header Area with Back Button and Progress -->
       <div class="flex items-center pt-2 pb-6 relative">
         <button
           @click="handleBack"
-          class="absolute left-0 p-2 text-gray-600 hover:text-gray-900 focus:outline-none"
+          class="absolute left-0 p-2 text-brand-slate hover:text-brand-indigo focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

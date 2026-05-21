@@ -17,7 +17,7 @@ const steps = computed(() => {
       v-for="step in steps"
       :key="step"
       class="h-1.5 rounded-full transition-colors duration-300 w-10 sm:w-12"
-      :class="[step <= currentStep ? 'bg-teal-700' : 'bg-gray-200']"
+      :class="[step <= currentStep ? 'bg-brand-indigo' : 'bg-gray-200']"
     ></div>
   </div>
 </template>

@@ -7,10 +7,10 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 mb-4">
+  <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 mb-4">
     <div class="flex items-center justify-between mb-5">
-      <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Booking Details</h3>
-      <button class="text-xs font-bold text-teal-700 flex items-center hover:text-teal-800">
+      <h3 class="text-[10px] font-bold text-brand-slate uppercase tracking-widest">Booking Details</h3>
+      <button class="text-xs font-bold text-brand-indigo flex items-center hover:text-brand-gold rounded-xl px-2 py-1 transition-colors">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-3.5 w-3.5 mr-1"
@@ -33,7 +33,7 @@ defineProps<{
       <!-- Service -->
       <div class="flex items-start">
         <div
-          class="h-8 w-8 rounded bg-teal-50 text-teal-700 flex items-center justify-center mr-4 mt-0.5"
+          class="h-8 w-8 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center mr-4 mt-0.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,15 +51,15 @@ defineProps<{
           </svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Service</p>
-          <p class="text-sm font-bold text-gray-900">{{ serviceName }}</p>
+          <p class="text-[10px] font-bold text-brand-slate uppercase tracking-wider mb-0.5">Service</p>
+          <p class="text-sm font-bold text-brand-indigo">{{ serviceName }}</p>
         </div>
       </div>
 
       <!-- Date & Time -->
       <div class="flex items-start">
         <div
-          class="h-8 w-8 rounded bg-teal-50 text-teal-700 flex items-center justify-center mr-4 mt-0.5"
+          class="h-8 w-8 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center mr-4 mt-0.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,17 +77,17 @@ defineProps<{
           </svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">
+          <p class="text-[10px] font-bold text-brand-slate uppercase tracking-wider mb-0.5">
             Date & Time
           </p>
-          <p class="text-sm font-bold text-gray-900">{{ dateTime }}</p>
+          <p class="text-sm font-bold text-brand-indigo">{{ dateTime }}</p>
         </div>
       </div>
 
       <!-- Location -->
       <div class="flex items-start">
         <div
-          class="h-8 w-8 rounded bg-teal-50 text-teal-700 flex items-center justify-center mr-4 mt-0.5"
+          class="h-8 w-8 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center mr-4 mt-0.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -105,10 +105,10 @@ defineProps<{
           </svg>
         </div>
         <div>
-          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">
+          <p class="text-[10px] font-bold text-brand-slate uppercase tracking-wider mb-0.5">
             Location
           </p>
-          <p class="text-sm font-bold text-gray-900">{{ locationDetails }}</p>
+          <p class="text-sm font-bold text-brand-indigo">{{ locationDetails }}</p>
         </div>
       </div>
     </div>

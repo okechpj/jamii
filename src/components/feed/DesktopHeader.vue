@@ -3,6 +3,9 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useModal } from '@/composables/useModal'
 import { useSearch } from '@/composables/useSearch'
 import { useRouter } from 'vue-router'
+import { useTheme } from '@/composables/useTheme'
+
+const { isDark, toggleTheme } = useTheme()
 
 const router = useRouter()
 const { globalSearchQuery } = useSearch()
@@ -96,23 +99,23 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="hidden lg:flex fixed top-0 w-full bg-white h-16 shadow-sm z-50 px-4 items-center justify-between border-b border-gray-200"
+    class="hidden lg:flex fixed top-0 w-full bg-white h-16 shadow-xs z-50 px-4 items-center justify-between border-b border-slate-100"
   >
     <!-- Left: Logo & Search -->
     <div class="flex items-center space-x-4 flex-1">
-      <button @click="router.back()" class="hidden xl:inline-flex items-center justify-center h-10 w-10 rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 transition">
+      <button @click="router.back()" class="hidden xl:inline-flex items-center justify-center h-10 w-10 rounded-xl bg-brand-indigo/5 text-brand-indigo hover:bg-brand-indigo/10 transition">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
-      <router-link to="/" class="text-2xl font-bold text-amber-800 hover:text-amber-900">Jamii Sasa</router-link>
-
+      <router-link to="/" class="text-2xl font-bold text-brand-indigo hover:text-brand-indigo/80">Jamii Sasa</router-link>
+ 
       <!-- Integrated Search -->
       <div class="relative w-full max-w-sm ml-4">
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-gray-400"
+            class="h-5 w-5 text-slate-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -128,16 +131,16 @@ onBeforeUnmount(() => {
         <input
           v-model="globalSearchQuery"
           type="text"
-          class="block w-full pl-10 py-2 border-none rounded-full bg-gray-100 text-sm focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all"
+          class="block w-full pl-10 py-2 border-none rounded-xl bg-brand-indigo/5 text-brand-indigo placeholder-slate-400 text-sm focus:ring-2 focus:ring-brand-gold focus:bg-white transition-all"
           placeholder="Search Jamii Sasa"
         />
       </div>
     </div>
-
+ 
     <!-- Center: Main Navigation Icons (Like FB) -->
     <div class="flex justify-center space-x-2 flex-1">
       <button
-        class="px-10 py-2 text-teal-600 border-b-2 border-teal-600 hover:bg-gray-50 rounded-lg"
+        class="px-10 py-2 text-brand-gold border-b-2 border-brand-gold hover:bg-brand-indigo/5 rounded-lg"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +158,7 @@ onBeforeUnmount(() => {
         </svg>
       </button>
       <button
-        class="px-10 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 rounded-lg transition-colors"
+        class="px-10 py-2 text-brand-slate hover:bg-brand-indigo/5 hover:text-brand-indigo rounded-lg transition-colors"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +176,7 @@ onBeforeUnmount(() => {
         </svg>
       </button>
       <button
-        class="px-10 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 rounded-lg transition-colors"
+        class="px-10 py-2 text-brand-slate hover:bg-brand-indigo/5 hover:text-brand-indigo rounded-lg transition-colors"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -191,12 +194,12 @@ onBeforeUnmount(() => {
         </svg>
       </button>
     </div>
-
+ 
     <!-- Right: Profile & Actions -->
     <div class="flex items-center justify-end space-x-3 flex-1">
       <button
         @click="openCreatePostModal"
-        class="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-300 transition-colors focus:outline-none"
+        class="h-10 w-10 bg-brand-indigo/5 rounded-xl flex items-center justify-center text-brand-indigo hover:bg-brand-indigo/10 transition-colors focus:outline-none"
         title="Create Post"
       >
         <svg
@@ -216,7 +219,7 @@ onBeforeUnmount(() => {
       </button>
       <button
         @click="router.push('/chat')"
-        class="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-300 transition-colors focus:outline-none"
+        class="h-10 w-10 bg-brand-indigo/5 rounded-xl flex items-center justify-center text-brand-indigo hover:bg-brand-indigo/10 transition-colors focus:outline-none"
         title="Chat"
       >
         <svg
@@ -234,10 +237,15 @@ onBeforeUnmount(() => {
           />
         </svg>
       </button>
+      <!-- Theme Toggle -->
       <button
-        class="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-300"
+        @click="toggleTheme"
+        class="h-10 w-10 bg-brand-indigo/5 rounded-xl flex items-center justify-center text-brand-indigo hover:bg-brand-indigo/10 transition-colors focus:outline-none"
+        :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
       >
+        <!-- Sun Icon (for dark mode) -->
         <svg
+          v-if="isDark"
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
           fill="none"
@@ -248,14 +256,31 @@ onBeforeUnmount(() => {
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"
+          />
+        </svg>
+        <!-- Moon Icon (for light mode) -->
+        <svg
+          v-else
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
           />
         </svg>
       </button>
+
       <div ref="notificationButtonRef" class="relative">
         <button
           @click.stop="toggleNotifications"
-          class="relative h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 hover:bg-gray-300 transition-colors focus:outline-none"
+          class="relative h-10 w-10 bg-brand-indigo/5 rounded-xl flex items-center justify-center text-brand-indigo hover:bg-brand-indigo/10 transition-colors focus:outline-none"
           title="Notifications"
         >
           <svg
@@ -279,63 +304,63 @@ onBeforeUnmount(() => {
             {{ unreadCount }}
           </span>
         </button>
-
+ 
         <div
           v-if="notificationOpen"
           ref="notificationPanelRef"
-          class="absolute right-0 top-full z-50 mt-3 w-[320px] rounded-3xl border border-gray-200 bg-white shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/5"
+          class="absolute right-0 top-full z-50 mt-3 w-[320px] rounded-xl border border-slate-100 bg-white shadow-xl ring-1 ring-slate-900/5"
         >
           <div class="flex items-center justify-between border-b border-gray-100 px-4 py-3">
             <div>
-              <p class="text-sm font-semibold text-slate-900">Notifications</p>
-              <p class="text-xs text-slate-500">Latest updates and alerts</p>
+              <p class="text-sm font-semibold text-brand-indigo">Notifications</p>
+              <p class="text-xs text-brand-slate">Latest updates and alerts</p>
             </div>
             <button
               @click="markAllAsRead"
-              class="rounded-full px-3 py-1 text-xs font-semibold text-teal-700 hover:bg-teal-50"
+              class="rounded-xl px-3 py-1 text-xs font-semibold text-brand-gold hover:bg-brand-gold/10"
             >
               Mark all read
             </button>
           </div>
-
+ 
           <div class="max-h-85 overflow-y-auto">
             <div v-if="loadingNotifications" class="space-y-3 p-4">
-              <div class="h-14 animate-pulse rounded-3xl bg-slate-200"></div>
-              <div class="h-14 animate-pulse rounded-3xl bg-slate-200"></div>
-              <div class="h-14 animate-pulse rounded-3xl bg-slate-200"></div>
+              <div class="h-14 animate-pulse rounded-xl bg-slate-200"></div>
+              <div class="h-14 animate-pulse rounded-xl bg-slate-200"></div>
+              <div class="h-14 animate-pulse rounded-xl bg-slate-200"></div>
             </div>
-
-            <div v-else-if="notificationError" class="px-4 py-6 text-center text-sm text-slate-600">
-              <p class="font-semibold text-slate-900">Cannot load notifications</p>
+ 
+            <div v-else-if="notificationError" class="px-4 py-6 text-center text-sm text-brand-slate">
+              <p class="font-semibold text-brand-indigo">Cannot load notifications</p>
               <p class="mt-2">{{ notificationError }}</p>
               <button
                 @click="toggleNotifications"
-                class="mt-4 rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-700"
+                class="mt-4 rounded-xl bg-brand-gold px-4 py-2 text-sm font-semibold text-white hover:bg-brand-gold-hover"
               >
                 Retry
               </button>
             </div>
-
-            <div v-else-if="notifications.length === 0" class="px-4 py-6 text-center text-sm text-slate-600">
-              <p class="font-semibold text-slate-900">No new notifications</p>
+ 
+            <div v-else-if="notifications.length === 0" class="px-4 py-6 text-center text-sm text-brand-slate">
+              <p class="font-semibold text-brand-indigo">No new notifications</p>
               <p class="mt-2">You’re all caught up for now.</p>
             </div>
-
+ 
             <div v-else class="space-y-2 p-3">
               <div
                 v-for="notification in notifications"
                 :key="notification.id"
-                class="rounded-3xl border p-3 transition hover:border-teal-300"
-                :class="notification.read ? 'border-transparent bg-slate-50 text-slate-600' : 'border-teal-200 bg-teal-50 text-slate-900 shadow-sm'"
+                class="rounded-xl border p-3 transition hover:border-brand-gold/50"
+                :class="notification.read ? 'border-transparent bg-slate-50 text-brand-slate' : 'border-brand-gold/20 bg-brand-gold/5 text-brand-indigo shadow-xs'"
               >
                 <div class="flex items-start justify-between gap-3">
                   <div class="min-w-0">
-                    <p class="truncate text-sm font-semibold">{{ notification.title }}</p>
-                    <p class="mt-1 text-xs leading-5">{{ notification.description }}</p>
+                    <p class="truncate text-sm font-semibold text-brand-indigo">{{ notification.title }}</p>
+                    <p class="mt-1 text-xs leading-5 text-brand-slate">{{ notification.description }}</p>
                   </div>
                   <button
                     @click.stop="markAsRead(notification.id)"
-                    class="text-xs font-semibold text-slate-500 hover:text-slate-900"
+                    class="text-xs font-semibold text-brand-slate hover:text-brand-indigo"
                   >
                     {{ notification.read ? 'Read' : 'Mark read' }}
                   </button>
@@ -344,7 +369,7 @@ onBeforeUnmount(() => {
                   <span>{{ notification.time }}</span>
                   <span
                     v-if="!notification.read"
-                    class="rounded-full bg-teal-600 px-2 py-0.5 text-[10px] font-semibold text-white"
+                    class="rounded-xl bg-brand-gold px-2 py-0.5 text-[10px] font-semibold text-white"
                   >
                     New
                   </span>
@@ -352,11 +377,11 @@ onBeforeUnmount(() => {
               </div>
             </div>
           </div>
-
+ 
           <div class="border-t border-gray-100 px-4 py-3">
             <button
               @click="notificationOpen = false"
-              class="w-full rounded-2xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+              class="w-full rounded-xl bg-brand-indigo px-4 py-2 text-sm font-semibold text-white hover:bg-brand-indigo/90"
             >
               View all notifications
             </button>
@@ -364,7 +389,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <button
-        class="h-10 w-10 rounded-full overflow-hidden border border-gray-200 hover:ring-2 hover:ring-teal-500 hover:ring-offset-1 transition-all ml-2"
+        class="h-10 w-10 rounded-full overflow-hidden border border-slate-200 hover:ring-2 hover:ring-brand-gold hover:ring-offset-1 transition-all ml-2"
       >
         <img
           src="https://i.pravatar.cc/150?u=current_user"

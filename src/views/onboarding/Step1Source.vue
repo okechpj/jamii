@@ -20,8 +20,8 @@ const handleContinue = () => {
 <template>
   <div class="flex flex-col h-full">
     <div class="text-center mb-8">
-      <h2 class="text-2xl font-bold text-gray-900 mb-2">How did you hear about Jamii Sasa?</h2>
-      <p class="text-sm text-gray-500">
+      <h2 class="text-2xl font-bold text-brand-indigo mb-2">How did you hear about Jamii Sasa?</h2>
+      <p class="text-sm text-brand-slate">
         Help us understand our community better. This will tailor your Jamii Sasa experience.
       </p>
     </div>

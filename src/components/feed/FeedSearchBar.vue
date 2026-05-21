@@ -25,9 +25,9 @@ function openSearch() {
     <div v-if="showCompact" class="px-4 pb-2">
       <button
         @click="openSearch"
-        class="inline-flex w-full items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
+        class="inline-flex w-full items-center gap-2 rounded-xl border border-slate-200 bg-brand-offwhite px-3 py-2 text-sm font-medium text-brand-slate hover:bg-slate-100 transition"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         Search Jamii Sasa
@@ -55,11 +55,11 @@ function openSearch() {
         <input
           v-model="globalSearchQuery"
           type="text"
-          class="block w-full pl-10 pr-10 py-2.5 border border-gray-200 rounded-lg bg-gray-50 text-sm focus:ring-teal-500 focus:border-teal-500"
+          class="block w-full pl-10 pr-10 py-2.5 border border-slate-200 rounded-xl bg-brand-offwhite text-sm focus:ring-brand-indigo focus:border-brand-indigo"
           placeholder="Discover local goods & services..."
         />
         <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
-          <button class="text-gray-400 hover:text-teal-600 focus:outline-none">
+          <button class="text-brand-slate hover:text-brand-indigo focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -83,11 +83,11 @@ function openSearch() {
           v-for="cat in categories"
           :key="cat"
           @click="activeCategory = cat"
-          class="whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium transition-colors shrink-0 flex items-center border"
+          class="whitespace-nowrap px-4 py-1.5 rounded-xl text-sm font-medium transition-colors shrink-0 flex items-center border"
           :class="
             activeCategory === cat
-              ? 'bg-teal-700 text-white border-teal-700'
-              : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
+              ? 'bg-brand-indigo text-white border-brand-indigo'
+              : 'bg-brand-offwhite text-brand-slate border-slate-200 hover:bg-slate-100'
           "
         >
           <svg

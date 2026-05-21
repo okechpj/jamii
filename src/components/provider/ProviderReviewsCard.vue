@@ -16,9 +16,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-teal-50/50 rounded-3xl p-6 border border-teal-100">
+  <div class="bg-brand-indigo/5 rounded-3xl p-6 border border-brand-indigo/10">
     <!-- Network Trust Banner -->
-    <div class="flex items-center mb-6 border-b border-teal-100/50 pb-4">
+    <div class="flex items-center mb-6 border-b border-brand-indigo/10 pb-4">
       <div class="flex -space-x-2 mr-3">
         <div class="h-8 w-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
           <img src="https://i.pravatar.cc/150?u=a" class="w-full h-full object-cover" />
@@ -27,12 +27,12 @@ defineProps<{
           <img src="https://i.pravatar.cc/150?u=b" class="w-full h-full object-cover" />
         </div>
         <div
-          class="h-8 w-8 rounded-full border-2 border-white bg-teal-800 text-white flex items-center justify-center text-xs font-bold"
+          class="h-8 w-8 rounded-full border-2 border-white bg-brand-indigo text-white flex items-center justify-center text-xs font-bold"
         >
           +{{ networkTrustCount - 2 }}
         </div>
       </div>
-      <p class="text-xs font-bold text-teal-900">
+      <p class="text-xs font-bold text-brand-indigo">
         {{ networkTrustCount }} people in your network trust this provider
       </p>
     </div>
@@ -63,7 +63,7 @@ defineProps<{
 
           <div
             v-if="review.isVerifiedJob"
-            class="bg-teal-50 text-teal-700 text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center"
+            class="bg-brand-indigo/10 text-brand-indigo text-[9px] font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ defineProps<{
           </div>
         </div>
 
-        <div class="flex items-center text-amber-500 mb-2">
+        <div class="flex items-center text-brand-gold mb-2">
           <svg
             v-for="i in review.rating"
             :key="i"
@@ -104,7 +104,7 @@ defineProps<{
 
     <!-- Read All Button -->
     <button
-      class="w-full text-center text-xs font-bold text-teal-700 py-2 hover:text-teal-800 focus:outline-none"
+      class="w-full text-center text-xs font-bold text-brand-indigo py-2 hover:text-[#0f172a] focus:outline-none"
     >
       Read all {{ totalReviews }} reviews
     </button>

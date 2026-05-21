@@ -17,7 +17,7 @@ export const useOnboardingStore = defineStore('onboarding', () => {
       if (parsed.discoverySource) discoverySource.value = parsed.discoverySource
       if (parsed.selectedCategories) selectedCategories.value = parsed.selectedCategories
       if (parsed.selectedServices) selectedServices.value = parsed.selectedServices
-    } catch (e) {
+    } catch {
       console.error('Failed to parse onboarding state from localStorage')
     }
   }

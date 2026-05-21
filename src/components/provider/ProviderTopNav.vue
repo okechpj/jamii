@@ -9,7 +9,7 @@ const router = useRouter()
     <div class="flex items-center">
       <button
         @click="router.back()"
-        class="p-2 -ml-2 text-amber-900 hover:text-amber-700 focus:outline-none"
+        class="p-2 -ml-2 text-brand-indigo hover:text-brand-indigo/80 focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +26,11 @@ const router = useRouter()
           />
         </svg>
       </button>
-      <h1 class="text-lg font-bold text-amber-900 ml-2">Provider Profile</h1>
+      <h1 class="text-lg font-bold text-brand-indigo ml-2">Provider Profile</h1>
     </div>
 
     <div class="flex items-center space-x-4">
-      <button class="text-amber-900 focus:outline-none">
+      <button class="text-brand-indigo hover:text-brand-indigo/80 focus:outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"

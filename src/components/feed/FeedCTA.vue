@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import BaseButton from '@/components/ui/BaseButton.vue'
 
 defineProps<{
   ctaText?: string
@@ -10,10 +9,10 @@ defineProps<{
 
 <template>
   <div
-    class="bg-[#8B4513] text-white p-8 my-2 flex flex-col items-center justify-center text-center shadow-inner"
+    class="bg-brand-indigo text-white p-8 my-2 flex flex-col items-center justify-center text-center shadow-inner rounded-xl"
   >
     <div
-      class="h-16 w-16 bg-white/10 rounded-full flex items-center justify-center mb-4 border border-white/20"
+      class="h-16 w-16 bg-white/10 rounded-xl flex items-center justify-center mb-4 border border-white/20"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +25,7 @@ defineProps<{
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+          :d="'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'"
         />
       </svg>
     </div>
@@ -38,7 +37,7 @@ defineProps<{
 
     <router-link
       to="/marketplace"
-      class="bg-[#5C2B0B] hover:bg-[#3D1D07] transition-colors text-white text-sm font-bold py-3 px-8 rounded-full shadow-md inline-flex items-center justify-center"
+      class="bg-brand-gold hover:bg-brand-gold-hover transition-colors text-white text-sm font-bold py-3 px-8 rounded-xl shadow-md inline-flex items-center justify-center"
     >
       {{ buttonText || 'Book a Service' }}
     </router-link>

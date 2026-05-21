@@ -6,20 +6,20 @@ import FeedCTA from './FeedCTA.vue'
   <div
     class="hidden lg:block w-80 sticky top-[80px] h-[calc(100vh-80px)] overflow-y-auto px-4 py-4"
   >
-    <h3 class="text-gray-500 font-semibold text-lg mb-4 px-2">Sponsored</h3>
+    <h3 class="text-brand-slate font-semibold text-lg mb-4 px-2">Sponsored</h3>
 
     <!-- Using the FeedCTA component natively as a sidebar widget -->
     <div class="rounded-xl overflow-hidden shadow-sm mb-6">
       <FeedCTA class="!my-0 !shadow-none" />
     </div>
 
-    <hr class="border-gray-200 my-4" />
+    <hr class="border-slate-200 my-4" />
 
     <div class="flex items-center justify-between px-2 mb-4">
-      <h3 class="text-gray-500 font-semibold text-lg">Your Friends</h3>
-      <div class="flex space-x-3 text-gray-400">
-        <button class="hover:text-gray-600 focus:outline-none"></button>
-        <button class="hover:text-gray-600 focus:outline-none">
+      <h3 class="text-brand-slate font-semibold text-lg">Your Friends</h3>
+      <div class="flex space-x-3 text-brand-slate/60">
+        <button class="hover:text-brand-indigo focus:outline-none"></button>
+        <button class="hover:text-brand-indigo focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -35,7 +35,7 @@ import FeedCTA from './FeedCTA.vue'
             />
           </svg>
         </button>
-        <button class="hover:text-gray-600 focus:outline-none">
+        <button class="hover:text-brand-indigo focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -58,9 +58,9 @@ import FeedCTA from './FeedCTA.vue'
       <li v-for="i in 8" :key="i">
         <a
           href="#"
-          class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-200 transition-colors relative"
+          class="flex items-center space-x-3 p-2 rounded-xl hover:bg-brand-indigo/5 transition-colors relative"
         >
-          <div class="h-9 w-9 rounded-full overflow-hidden bg-gray-300">
+          <div class="h-9 w-9 rounded-full overflow-hidden bg-brand-indigo/5">
             <img
               :src="`https://i.pravatar.cc/150?u=contact${i}`"
               alt="Contact"
@@ -68,9 +68,9 @@ import FeedCTA from './FeedCTA.vue'
             />
           </div>
           <span
-            class="absolute bottom-2 left-8 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"
+            class="absolute bottom-2 left-8 w-2.5 h-2.5 bg-brand-gold border-2 border-white rounded-full"
           ></span>
-          <span class="font-medium text-gray-800 text-sm">Local Contact {{ i }}</span>
+          <span class="font-semibold text-brand-indigo text-sm">Local Contact {{ i }}</span>
         </a>
       </li>
     </ul>

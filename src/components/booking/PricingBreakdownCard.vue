@@ -15,26 +15,26 @@ const formatKES = (amount: number) => {
 </script>
 
 <template>
-  <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-    <h3 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">
+  <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200">
+    <h3 class="text-[10px] font-bold text-brand-slate uppercase tracking-widest mb-4">
       Pricing Breakdown
     </h3>
 
     <div class="space-y-3 mb-6">
       <div class="flex items-center justify-between">
-        <span class="text-sm text-gray-600 font-medium">Service Fee</span>
-        <span class="text-sm font-bold text-gray-900">{{ formatKES(serviceFee) }}</span>
+        <span class="text-sm text-brand-slate font-medium">Service Fee</span>
+        <span class="text-sm font-bold text-brand-indigo">{{ formatKES(serviceFee) }}</span>
       </div>
       <div class="flex items-center justify-between">
-        <span class="text-sm text-gray-600 font-medium">Transport Fee</span>
-        <span class="text-sm font-bold text-gray-900">{{ formatKES(transportFee) }}</span>
+        <span class="text-sm text-brand-slate font-medium">Transport Fee</span>
+        <span class="text-sm font-bold text-brand-indigo">{{ formatKES(transportFee) }}</span>
       </div>
       <div class="flex items-center justify-between">
-        <span class="text-sm text-gray-600 font-medium flex items-center">
+        <span class="text-sm text-brand-slate font-medium flex items-center">
           Platform Protection
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-3.5 w-3.5 ml-1 text-teal-700"
+            class="h-3.5 w-3.5 ml-1 text-brand-gold"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -47,21 +47,21 @@ const formatKES = (amount: number) => {
             />
           </svg>
         </span>
-        <span class="text-sm font-bold text-gray-900">{{ formatKES(platformFee) }}</span>
+        <span class="text-sm font-bold text-brand-indigo">{{ formatKES(platformFee) }}</span>
       </div>
     </div>
 
-    <div class="border-t border-gray-200 pt-4 mb-6 flex items-center justify-between">
-      <span class="text-lg font-bold text-gray-900">Total</span>
-      <span class="text-lg font-bold text-teal-700">{{ formatKES(total) }}</span>
+    <div class="border-t border-slate-200 pt-4 mb-6 flex items-center justify-between">
+      <span class="text-lg font-bold text-brand-indigo">Total</span>
+      <span class="text-lg font-bold text-brand-indigo">{{ formatKES(total) }}</span>
     </div>
 
     <div
-      class="bg-[#E5FDF4] rounded-lg p-3 flex items-center justify-center border border-teal-100/50"
+      class="bg-brand-indigo/5 rounded-xl p-3 flex items-center justify-center border border-brand-indigo/10"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-4 w-4 text-teal-700 mr-2"
+        class="h-4 w-4 text-brand-indigo mr-2"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -71,7 +71,7 @@ const formatKES = (amount: number) => {
           clip-rule="evenodd"
         />
       </svg>
-      <span class="text-[10px] font-bold text-teal-900"
+      <span class="text-[10px] font-bold text-brand-slate"
         >Your payment is protected until service completion.</span
       >
     </div>

@@ -15,7 +15,7 @@ defineProps<{
     >
       <!-- Trust Score -->
       <div class="flex flex-col items-center flex-1">
-        <span class="text-4xl font-black text-teal-800">{{ trustScore }}</span>
+        <span class="text-4xl font-black text-brand-indigo">{{ trustScore }}</span>
         <span class="text-[10px] font-bold text-gray-500 tracking-wider uppercase mt-1"
           >Trust Score</span
         >
@@ -23,8 +23,8 @@ defineProps<{
 
       <!-- Rating -->
       <div class="flex flex-col items-center flex-1">
-        <span class="text-4xl font-black text-amber-700">{{ rating.toFixed(1) }}</span>
-        <div class="flex items-center mt-1 text-amber-500">
+        <span class="text-4xl font-black text-brand-indigo">{{ rating.toFixed(1) }}</span>
+        <div class="flex items-center mt-1 text-brand-gold">
           <svg
             v-for="i in 5"
             :key="i"
@@ -50,7 +50,7 @@ defineProps<{
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-teal-600 mr-3 flex-shrink-0"
+          class="h-5 w-5 text-brand-indigo mr-3 flex-shrink-0"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -68,11 +68,11 @@ defineProps<{
 
     <!-- Trusted Badge -->
     <div
-      class="bg-cyan-50/50 rounded-xl p-3 flex items-center justify-center border border-cyan-100"
+      class="bg-brand-indigo/5 rounded-xl p-3 flex items-center justify-center border border-brand-indigo/10"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 text-teal-700 mr-2"
+        class="h-5 w-5 text-brand-indigo mr-2"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -80,7 +80,7 @@ defineProps<{
           d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
         />
       </svg>
-      <span class="text-xs font-bold text-teal-900"
+      <span class="text-xs font-bold text-brand-indigo"
         >Trusted by {{ trustedFamiliesCount }} families in {{ location }}</span
       >
     </div>

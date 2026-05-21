@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100">
-    <h2 class="text-lg font-bold text-amber-900 mb-4">Personal Story</h2>
+    <h2 class="text-lg font-bold text-brand-indigo mb-4">Personal Story</h2>
     <p class="text-sm text-gray-700 leading-relaxed mb-6">{{ story }}</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -19,7 +19,7 @@ defineProps<{
         <svg
           v-if="feature.icon === 'shield'"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4 text-teal-600 mr-2"
+          class="h-4 w-4 text-brand-indigo mr-2"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -32,7 +32,7 @@ defineProps<{
         <svg
           v-else-if="feature.icon === 'leaf'"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4 text-teal-600 mr-2"
+          class="h-4 w-4 text-brand-indigo mr-2"
           viewBox="0 0 20 20"
           fill="currentColor"
         >

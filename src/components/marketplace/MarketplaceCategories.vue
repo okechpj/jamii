@@ -12,7 +12,7 @@ defineProps<{
   <div class="px-4 py-4 bg-white">
     <div class="flex items-center justify-between mb-4">
       <h2 class="text-lg font-bold text-gray-900">Service Categories</h2>
-      <button class="text-sm font-bold text-teal-600 hover:text-teal-700 focus:outline-none">
+      <button class="text-sm font-bold text-brand-indigo hover:text-[#0f172a] focus:outline-none">
         See All
       </button>
     </div>
@@ -24,10 +24,10 @@ defineProps<{
         class="flex flex-col items-center flex-shrink-0"
       >
         <button
-          class="h-16 w-16 rounded-3xl flex items-center justify-center transition-colors shadow-sm border border-gray-50 mb-2"
+          class="h-10 w-10 rounded-3xl flex items-center justify-center transition-colors shadow-sm border border-gray-50 mb-2"
           :class="
             index === 0
-              ? 'bg-cyan-200 text-teal-900'
+              ? 'bg-brand-indigo text-white'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           "
         >

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
 import { providerProfileData } from '@/assets/providerData'
 
 import DesktopSidebarLeft from '@/components/feed/DesktopSidebarLeft.vue'
@@ -12,22 +11,21 @@ import ProviderProjectsCard from '@/components/provider/ProviderProjectsCard.vue
 import ProviderReviewsCard from '@/components/provider/ProviderReviewsCard.vue'
 import ProviderActions from '@/components/provider/ProviderActions.vue'
 
-const route = useRoute()
 // In a real app we'd fetch the provider by route.params.id
 // const providerId = route.params.id
 const provider = providerProfileData
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 flex flex-col">
+  <div class="min-h-screen bg-brand-offwhite flex flex-col">
     <!-- Main Content Wrapper (Left Sidebar + Center Wide Column) -->
-    <div class="flex-1 flex justify-center lg:mt-4">
+    <div class="flex-1 flex justify-center lg:mt-4 bg-brand-offwhite">
       <!-- Desktop Left Sidebar -->
       <DesktopSidebarLeft />
 
       <!-- Center Profile Content -->
       <div
-        class="w-full lg:max-w-4xl bg-[#FCFAF8] min-h-screen shadow-sm relative lg:rounded-xl lg:overflow-hidden lg:mb-8 pb-16 lg:pb-0 flex flex-col"
+        class="w-full lg:max-w-4xl bg-white min-h-screen shadow-sm relative lg:rounded-xl lg:overflow-hidden lg:mb-8 pb-16 lg:pb-0 flex flex-col"
       >
         <ProviderTopNav />
 

@@ -1,28 +1,136 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useTheme } from '@/composables/useTheme'
 import { useSearch } from '@/composables/useSearch'
 
+const router = useRouter()
+const { isDark, toggleTheme } = useTheme()
 const { globalSearchQuery } = useSearch()
+
+const isCollapsed = ref(false)
+let lastScrollY = typeof window !== 'undefined' ? window.scrollY : 0
+
+const subTabs = [
+  { id: 'shout-outs', label: 'Shout-Outs' },
+  { id: 'price-checks', label: 'Price Checks' },
+  { id: 'chama-wisdom', label: 'Chama Wisdom' },
+  { id: 'profile', label: 'Profile' },
+]
+
+function selectSubTab(tabId: string) {
+  router.push({ path: '/', query: { tab: tabId } })
+}
+
+function handleScroll() {
+  const currentScrollY = window.scrollY
+  
+  // Guard for iOS rubber banding/negative scrolls
+  if (currentScrollY < 0) return
+
+  const delta = currentScrollY - lastScrollY
+
+  // Scroll down threshold: >10px. Scroll up threshold: >5px (or close to top)
+  if (delta > 10 && currentScrollY > 60) {
+    isCollapsed.value = true
+  } else if (delta < -5 || currentScrollY <= 10) {
+    isCollapsed.value = false
+  }
+
+  lastScrollY = currentScrollY
+}
+
+function goNotifications() {
+  router.push('/notifications')
+}
+
+function goChat() {
+  router.push('/chat')
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <div class="px-4 pt-4 pb-2 bg-white">
-    <!-- User Info Row -->
-    <div class="flex items-center justify-between mb-4">
-      <div class="flex items-center space-x-3">
-        <div class="h-10 w-10 rounded-full overflow-hidden bg-gray-200 border border-gray-100">
-          <img
-            src="https://i.pravatar.cc/150?u=chidi"
-            alt="Profile"
-            class="h-full w-full object-cover"
-          />
+  <!-- Mobile/Tablet Sticky Navigation Bar (same layout structure and scroll-collapse as FeedHeader) -->
+  <div
+    class="bg-white sticky top-0 z-40 border-b border-slate-200 shadow-sm transition-all duration-200 ease-in-out overflow-hidden lg:hidden"
+    :style="{ height: isCollapsed ? '56px' : '152px' }"
+  >
+    <!-- Row 1: Logo & Actions (height: 56px) -->
+    <div
+      class="h-14 flex items-center justify-between px-4 transition-all duration-200 ease-in-out"
+      :style="{ transform: isCollapsed ? 'translateY(-56px)' : 'translateY(0)', opacity: isCollapsed ? 0 : 1 }"
+    >
+      <h1 class="text-xl font-bold text-brand-indigo">Jamii Sasa</h1>
+
+      <div class="flex items-center gap-2">
+        <!-- Theme Toggle -->
+        <button
+          @click="toggleTheme"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-indigo/5 text-brand-indigo hover:bg-brand-indigo/10 transition cursor-pointer"
+          :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+        >
+          <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <!-- Notifications -->
+        <button
+          @click="goNotifications"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-indigo/5 text-brand-indigo hover:bg-brand-indigo/10 transition cursor-pointer"
+          title="Notifications"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+
+        <!-- Chat -->
+        <button
+          @click="goChat"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-indigo/5 text-brand-indigo hover:bg-brand-indigo/10 transition cursor-pointer"
+          title="Chat"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Row 2: Persistent Global Search (height: 56px) -->
+    <div
+      class="h-14 px-4 flex items-center transition-transform duration-200 ease-in-out"
+      :style="{ transform: isCollapsed ? 'translateY(-56px)' : 'translateY(0)' }"
+    >
+      <div class="relative w-full">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
         </div>
-        <div>
-          <h1 class="text-lg font-bold text-amber-900 leading-tight">Habari, Chidi</h1>
-          <div class="flex items-center text-xs text-gray-500 mt-0.5">
+        <input
+          v-model="globalSearchQuery"
+          type="text"
+          class="block w-full pl-10 pr-10 py-2 border border-slate-200 rounded-xl bg-brand-offwhite text-sm focus:ring-brand-gold focus:border-brand-gold text-brand-indigo placeholder-brand-slate/60 transition-colors"
+          placeholder="What service do you need today?"
+        />
+        <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+          <button class="text-brand-indigo hover:text-brand-gold focus:outline-none cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-3 w-3 mr-1 text-gray-400"
+              class="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -31,27 +139,39 @@ const { globalSearchQuery } = useSearch()
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
               />
             </svg>
-            Kilimani, Nairobi
-          </div>
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Search Bar -->
-    <div class="relative mb-3">
+    <!-- Row 3: Sub-tabs (height: 40px) -->
+    <div
+      class="h-10 border-t border-slate-100 flex items-center justify-around transition-all duration-200 ease-in-out"
+      :style="{ transform: isCollapsed ? 'translateY(-80px)' : 'translateY(0)', opacity: isCollapsed ? 0 : 1 }"
+    >
+      <button
+        v-for="tab in subTabs"
+        :key="tab.id"
+        @click="selectSubTab(tab.id)"
+        class="flex-1 text-center text-xs font-semibold transition-all relative h-full flex flex-col items-center justify-center outline-hidden cursor-pointer text-brand-slate hover:text-brand-indigo"
+      >
+        <span>{{ tab.label }}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Non-sticky Mobile Greeting & Desktop View Header -->
+  <div class="px-4 pt-4 pb-2 bg-white">
+
+    <!-- Desktop Search Bar (shown only on lg screens since the sticky header is hidden on desktop) -->
+    <div class="relative mb-3 hidden lg:block">
       <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-gray-400"
+          class="h-5 w-5 text-slate-400"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -67,11 +187,11 @@ const { globalSearchQuery } = useSearch()
       <input
         v-model="globalSearchQuery"
         type="text"
-        class="block w-full pl-10 pr-10 py-3 border border-gray-200 rounded-xl bg-white text-sm focus:ring-teal-500 focus:border-teal-500 shadow-sm"
+        class="block w-full pl-10 pr-10 py-3 border border-slate-200 rounded-xl bg-white text-sm focus:ring-brand-indigo focus:border-brand-indigo shadow-sm"
         placeholder="What service do you need today?"
       />
       <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
-        <button class="text-teal-600 focus:outline-none">
+        <button class="text-brand-indigo hover:text-brand-gold focus:outline-none cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"

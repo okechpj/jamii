@@ -34,7 +34,7 @@ function openProfile() {
 
 <template>
   <div
-    class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col mx-4 my-4 cursor-pointer"
+    class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col mx-4 my-4 cursor-pointer"
     @click="openProfile"
   >
     <!-- Image Header with Overlays -->
@@ -43,11 +43,11 @@ function openProfile() {
 
       <!-- Rating Badge -->
       <div
-        class="absolute top-3 left-3 bg-white/95 backdrop-blur text-xs font-bold px-2.5 py-1.5 rounded-full flex items-center shadow-sm text-gray-900"
+        class="absolute top-3 left-3 bg-white/95 backdrop-blur text-xs font-bold px-2.5 py-1.5 rounded-xl flex items-center shadow-sm text-brand-indigo"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-3.5 w-3.5 text-teal-600 mr-1"
+          class="h-3.5 w-3.5 text-brand-gold mr-1"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -56,12 +56,12 @@ function openProfile() {
           />
         </svg>
         {{ provider.rating.toFixed(1) }}
-        <span class="text-gray-500 ml-1 font-medium">({{ provider.reviewsCount }} reviews)</span>
+        <span class="text-brand-slate ml-1 font-medium">({{ provider.reviewsCount }} reviews)</span>
       </div>
 
       <!-- Save Button -->
       <button
-        class="absolute top-3 right-3 bg-white h-8 w-8 rounded-full flex items-center justify-center shadow-sm text-amber-800 focus:outline-none"
+        class="absolute top-3 right-3 bg-white h-8 w-8 rounded-xl flex items-center justify-center shadow-sm text-brand-indigo focus:outline-none hover:bg-brand-indigo/5 transition-colors"
         @click.stop
       >
         <svg
@@ -85,7 +85,7 @@ function openProfile() {
     <div class="p-5">
       <!-- Provider Header -->
       <div class="flex items-center space-x-3 mb-4">
-        <div class="h-10 w-10 rounded-full overflow-hidden bg-gray-200">
+        <div class="h-10 w-10 rounded-full overflow-hidden bg-brand-indigo/5">
           <img
             :src="provider.providerAvatar"
             :alt="provider.providerName"
@@ -94,11 +94,11 @@ function openProfile() {
         </div>
         <div>
           <div class="flex items-center">
-            <h3 class="font-bold text-gray-900 text-sm">{{ provider.providerName }}</h3>
+            <h3 class="font-bold text-brand-indigo text-sm">{{ provider.providerName }}</h3>
             <svg
               v-if="provider.verified"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-teal-600 ml-1"
+              class="h-4 w-4 text-brand-indigo ml-1"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -109,19 +109,19 @@ function openProfile() {
               />
             </svg>
           </div>
-          <p class="text-[11px] text-gray-500 font-medium">
+          <p class="text-[11px] text-brand-slate font-medium">
             Trusted by {{ provider.trustedCount }} people
           </p>
         </div>
       </div>
 
       <!-- Service Info -->
-      <h2 class="text-lg font-bold text-amber-900 mb-2">{{ provider.serviceTitle }}</h2>
-      <div class="flex items-center space-x-4 text-xs font-semibold text-gray-600 mb-4">
+      <h2 class="text-lg font-bold text-brand-indigo mb-2">{{ provider.serviceTitle }}</h2>
+      <div class="flex items-center space-x-4 text-xs font-semibold text-brand-slate mb-4">
         <div class="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 mr-1 text-gray-400"
+            class="h-4 w-4 mr-1 text-brand-slate/60"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -138,7 +138,7 @@ function openProfile() {
         <div class="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 mr-1 text-gray-400"
+            class="h-4 w-4 mr-1 text-brand-slate/60"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -155,8 +155,8 @@ function openProfile() {
       </div>
 
       <!-- Review Snippet -->
-      <div class="bg-gray-50 rounded-xl p-3 mb-5">
-        <p class="text-xs text-gray-600 font-medium leading-relaxed italic">
+      <div class="bg-brand-indigo/5 rounded-xl p-3 mb-5">
+        <p class="text-xs text-brand-slate font-medium leading-relaxed italic">
           {{ provider.reviewSnippet }}
         </p>
       </div>
@@ -164,28 +164,28 @@ function openProfile() {
       <!-- Stats Grid -->
       <div class="grid grid-cols-3 gap-4 mb-6">
         <div class="text-center">
-          <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Completed</p>
-          <p class="text-lg font-bold text-gray-900">{{ provider.stats.completed }}</p>
+          <p class="text-[10px] text-brand-slate font-bold uppercase tracking-wider mb-1">Completed</p>
+          <p class="text-lg font-bold text-brand-indigo">{{ provider.stats.completed }}</p>
         </div>
-        <div class="text-center border-l border-r border-gray-100">
-          <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Response</p>
-          <p class="text-lg font-bold text-gray-900">{{ provider.stats.responseRate }}</p>
+        <div class="text-center border-l border-r border-slate-100">
+          <p class="text-[10px] text-brand-slate font-bold uppercase tracking-wider mb-1">Response</p>
+          <p class="text-lg font-bold text-brand-indigo">{{ provider.stats.responseRate }}</p>
         </div>
         <div class="text-center">
-          <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">Repeat</p>
-          <p class="text-lg font-bold text-gray-900">{{ provider.stats.repeatRate }}</p>
+          <p class="text-[10px] text-brand-slate font-bold uppercase tracking-wider mb-1">Repeat</p>
+          <p class="text-lg font-bold text-brand-indigo">{{ provider.stats.repeatRate }}</p>
         </div>
       </div>
 
       <!-- Action Buttons -->
       <div class="flex items-center space-x-3">
         <router-link :to="'/provider/' + provider.id" class="flex-1" @click.stop>
-          <BaseButton class="w-full bg-teal-800 hover:bg-teal-900 border-none shadow-md" block>
+          <BaseButton variant="primary" class="w-full shadow-md bg- hover:bg-emerald-700 text-white border-emerald-600" block>
             View Full Profile
           </BaseButton>
         </router-link>
         <button
-          class="h-12 w-12 rounded-xl border-2 border-teal-800 text-teal-800 flex items-center justify-center hover:bg-teal-50 transition-colors focus:outline-none"
+          class="h-12 w-12 rounded-xl border border-brand-indigo text-brand-indigo flex items-center justify-center hover:bg-brand-indigo/5 transition-colors focus:outline-none"
           @click.stop
         >
           <svg

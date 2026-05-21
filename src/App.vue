@@ -5,7 +5,7 @@ import BottomNavigation from '@/components/feed/BottomNavigation.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 text-gray-900 font-sans">
+  <div class="min-h-screen bg-brand-offwhite text-brand-slate font-sans">
     <main class="pb-20">
       <RouterView />
     </main>

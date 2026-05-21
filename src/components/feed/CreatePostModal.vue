@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { useModal } from '@/composables/useModal'
 import BaseButton from '@/components/ui/BaseButton.vue'
 
@@ -67,12 +67,6 @@ const toggleTagUser = (friend: { id: number; name: string }) => {
 const isUserTagged = (id: number) => {
   return taggedUsers.value.some((u) => u.id === id)
 }
-
-const headerText = computed(() => {
-  if (taggedUsers.value.length === 0) return 'Habari, Chidi'
-  if (taggedUsers.value.length === 1) return `Habari, Chidi is with ${taggedUsers.value[0]?.name}`
-  return `Habari, Chidi is with ${taggedUsers.value[0]?.name} and ${taggedUsers.value.length - 1} others`
-})
 
 // Emoji Picker Logic
 const showEmojiPicker = ref(false)
@@ -269,7 +263,7 @@ const handlePost = () => {
                 <div
                   class="h-5 w-5 rounded-full border flex items-center justify-center transition-colors"
                   :class="
-                    isUserTagged(friend.id) ? 'bg-teal-600 border-teal-600' : 'border-gray-300'
+                    isUserTagged(friend.id) ? 'bg-brand-indigo border-brand-indigo' : 'border-gray-300'
                   "
                 >
                   <svg
@@ -408,7 +402,8 @@ const handlePost = () => {
           block
           :disabled="!postText.trim() && mediaFiles.length === 0"
           @click="handlePost"
-          class="w-full bg-teal-800 hover:bg-teal-900 border-none disabled:opacity-50 disabled:cursor-not-allowed text-base font-bold transition-all"
+          variant="primary"
+          class="w-full text-base font-bold transition-all"
         >
           Post
         </BaseButton>

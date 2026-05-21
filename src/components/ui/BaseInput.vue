@@ -36,7 +36,7 @@ const togglePassword = () => {
 <template>
   <div class="flex flex-col mb-4 w-full">
     <div v-if="label || $slots.labelRight" class="flex justify-between items-center mb-1">
-      <label v-if="label" class="text-sm font-medium text-gray-700">
+      <label v-if="label" class="text-sm font-medium text-brand-indigo">
         {{ label }}
         <span v-if="required" class="text-red-500">*</span>
       </label>
@@ -59,7 +59,7 @@ const togglePassword = () => {
         @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
         :placeholder="placeholder"
         :required="required"
-        class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block p-3 transition-colors"
+        class="w-full bg-white border border-slate-200 text-brand-indigo text-sm rounded-xl focus:ring-brand-gold focus:border-brand-gold block p-3 transition-colors"
         :class="[
           hasLeadingIcon ? 'pl-10' : 'pl-3',
           hasTrailingIcon ? 'pr-10' : 'pr-3',

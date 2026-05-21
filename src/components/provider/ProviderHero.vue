@@ -18,7 +18,7 @@ defineProps<{
     <div class="absolute bottom-0 left-0 p-6 w-full text-white">
       <div
         v-if="isElite"
-        class="inline-flex items-center bg-teal-600/90 backdrop-blur text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded mb-2"
+        class="inline-flex items-center bg-brand-indigo/90 backdrop-blur text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded mb-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ defineProps<{
         Elite Provider
       </div>
 
-      <h1 class="text-3xl sm:text-4xl font-bold mb-1">{{ name }}</h1>
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-1">{{ name }}</h1>
       <p class="text-sm sm:text-base text-gray-200 font-medium">
         {{ title }} &bull; <span class="text-white font-bold">{{ experience }}</span>
       </p>

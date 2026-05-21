@@ -40,6 +40,16 @@ const router = createRouter({
       component: () => import('../views/OrderConfirmationView.vue'),
     },
     {
+      path: '/provider/:id/track',
+      name: 'order-tracking',
+      component: () => import('../views/OrderTrackingView.vue'),
+    },
+    {
+      path: '/provider/:id/review',
+      name: 'order-review',
+      component: () => import('../views/ReviewView.vue'),
+    },
+    {
       path: '/signup',
       name: 'signup',
       component: () => import('../views/auth/SignUpView.vue'),
@@ -77,10 +87,17 @@ const router = createRouter({
       ],
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 })
 
 // Navigation guard to keep store state in sync with router path if user navigates manually
-router.beforeEach((to, from, next) => {
+router.beforeEach((to) => {
   if (to.path.startsWith('/onboarding/step-')) {
     const stepMatch = to.path.match(/\/onboarding\/step-(\d+)/)
     if (stepMatch && stepMatch[1]) {
@@ -92,7 +109,6 @@ router.beforeEach((to, from, next) => {
       })
     }
   }
-  next()
 })
 
 export default router

@@ -7,8 +7,8 @@ defineProps<{
 <template>
   <div class="mb-6">
     <div class="flex items-center justify-between mb-4 px-2">
-      <h2 class="text-lg font-bold text-amber-900">Recent Projects</h2>
-      <button class="text-xs font-bold text-teal-600 hover:text-teal-700">View All</button>
+      <h2 class="text-lg font-bold text-brand-indigo">Recent Projects</h2>
+      <button class="text-xs font-bold text-brand-indigo hover:text-[#0f172a]">View All</button>
     </div>
 
     <!-- Horizontal scroll for projects -->

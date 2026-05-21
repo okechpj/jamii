@@ -34,12 +34,12 @@ const links = [
       <li v-for="link in links" :key="link.id">
         <router-link
           :to="link.to"
-          class="flex items-center space-x-3 p-2.5 rounded-lg transition-colors"
-          :class="route.path === link.to ? 'bg-gray-200 font-bold' : 'hover:bg-gray-200'"
+          class="flex items-center space-x-3 p-2.5 rounded-xl transition-colors"
+          :class="route.path === link.to ? 'bg-brand-indigo/5 font-bold' : 'hover:bg-brand-indigo/5'"
         >
           <div
             v-if="link.isProfile"
-            class="h-9 w-9 rounded-full overflow-hidden border border-gray-200"
+            class="h-9 w-9 rounded-full overflow-hidden border border-slate-200"
           >
             <img
               src="https://i.pravatar.cc/150?u=chidi"
@@ -49,12 +49,12 @@ const links = [
           </div>
           <div
             v-else
-            class="h-9 w-9 flex items-center justify-center rounded-full bg-gray-100"
-            :class="route.path === link.to ? 'text-teal-700 bg-teal-50' : 'text-teal-600'"
+            class="h-9 w-9 flex items-center justify-center rounded-xl transition-colors"
+            :class="route.path === link.to ? 'text-brand-gold bg-brand-gold/10' : 'text-brand-slate bg-brand-indigo/5'"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
+              class="h-5 w-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               stroke="none"
@@ -72,7 +72,7 @@ const links = [
             <svg
               v-else
               xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
+              class="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -88,7 +88,7 @@ const links = [
           <span
             class="text-sm"
             :class="
-              route.path === link.to ? 'font-bold text-gray-900' : 'font-medium text-gray-800'
+              route.path === link.to ? 'font-extrabold text-brand-indigo' : 'font-semibold text-brand-slate hover:text-brand-indigo'
             "
             >{{ link.label }}</span
           >
@@ -97,7 +97,7 @@ const links = [
     </ul>
 
     <!-- Footer Links -->
-    <div class="mt-8 px-4 text-xs text-gray-500">
+    <div class="mt-8 px-4 text-xs text-brand-slate">
       <p>Privacy · Terms · Advertising · Ad Choices · Cookies · More · Jamii Sasa © 2026</p>
     </div>
   </div>

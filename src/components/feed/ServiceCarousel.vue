@@ -2,15 +2,25 @@
 import ServiceCard from './ServiceCard.vue'
 
 defineProps<{
-  services: any[]
+  services: Array<{
+    id: number
+    title: string
+    category: string
+    providerName: string
+    providerAvatar: string
+    rating: number
+    verified: boolean
+    image: string
+    review: string
+  }>
 }>()
 </script>
 
 <template>
-  <div class="bg-gray-50 py-4">
+  <div class="bg-brand-offwhite py-4">
     <div class="px-4 flex justify-between items-center mb-3">
-      <h2 class="text-base font-bold text-gray-900">Book with Confidence</h2>
-      <button class="text-sm text-teal-600 font-medium flex items-center hover:text-teal-700">
+      <h2 class="text-base font-bold text-brand-indigo">Book with Confidence</h2>
+      <button class="text-sm text-brand-indigo font-bold flex items-center hover:text-brand-indigo/80">
         View all
         <svg
           xmlns="http://www.w3.org/2000/svg"
