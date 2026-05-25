@@ -30,7 +30,7 @@ const variantClasses = computed(() => {
       return 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500'
     case 'primary':
     default:
-      return 'bg-brand-gold text-white hover:bg-brand-gold-hover focus:ring-brand-gold font-bold'
+      return 'bg-brand-gold text-brand-indigo hover:bg-brand-gold-hover focus:ring-brand-gold font-bold'
   }
 })
 </script>

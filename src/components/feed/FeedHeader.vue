@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
         <!-- Create Post -->
         <button
           @click="openCreatePostModal"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold text-white shadow-xs hover:bg-brand-gold-hover transition"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold text-brand-indigo shadow-xs hover:bg-brand-gold-hover transition"
           title="Create post"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

@@ -331,11 +331,11 @@ function toggleDropdownMenu() {
 
           <button
             @click="handlePayClick"
-            class="py-3 px-5.5 bg-brand-gold hover:bg-brand-gold-hover text-white font-black rounded-xl text-sm shadow-xs transition-colors flex items-center justify-center space-x-2 cursor-pointer border-none"
+            class="py-3 px-5.5 bg-brand-gold hover:bg-brand-gold-hover text-brand-indigo font-black rounded-xl text-sm shadow-xs transition-colors flex items-center justify-center space-x-2 cursor-pointer border-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4.5 w-4.5 text-white"
+              class="h-4.5 w-4.5 text-brand-indigo"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

@@ -335,7 +335,7 @@ onBeforeUnmount(() => {
               <p class="mt-2">{{ notificationError }}</p>
               <button
                 @click="toggleNotifications"
-                class="mt-4 rounded-xl bg-brand-gold px-4 py-2 text-sm font-semibold text-white hover:bg-brand-gold-hover"
+                class="mt-4 rounded-xl bg-brand-gold px-4 py-2 text-sm font-semibold text-brand-indigo hover:bg-brand-gold-hover"
               >
                 Retry
               </button>

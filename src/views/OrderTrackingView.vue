@@ -551,7 +551,7 @@ function handlePaymentAction() {
             class="w-full h-13 rounded-xl transition-all flex items-center justify-center space-x-2 cursor-pointer"
             :class="isPaid 
               ? 'border border-brand-indigo bg-white hover:bg-brand-indigo/5 text-brand-indigo font-bold'
-              : 'bg-brand-gold hover:bg-brand-gold-hover text-white font-bold border-none shadow-md'
+              : 'bg-brand-gold hover:bg-brand-gold-hover text-brand-indigo font-bold border-none shadow-md'
             "
           >
             <svg

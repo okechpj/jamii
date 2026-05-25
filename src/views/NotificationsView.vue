@@ -80,7 +80,7 @@ function backToFeed() {
           <div class="mt-4 flex items-center justify-between gap-3">
             <span
               v-if="notification.unread"
-              class="inline-flex rounded-xl bg-brand-gold px-3 py-1 text-xs font-semibold text-white"
+              class="inline-flex rounded-xl bg-brand-gold px-3 py-1 text-xs font-semibold text-brand-indigo"
             >
               New
             </span>

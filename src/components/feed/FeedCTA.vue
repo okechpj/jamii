@@ -37,7 +37,7 @@ defineProps<{
 
     <router-link
       to="/marketplace"
-      class="bg-brand-gold hover:bg-brand-gold-hover transition-colors text-white text-sm font-bold py-3 px-8 rounded-xl shadow-md inline-flex items-center justify-center"
+      class="bg-brand-gold hover:bg-brand-gold-hover transition-colors text-brand-indigo text-sm font-bold py-3 px-8 rounded-xl shadow-md inline-flex items-center justify-center"
     >
       {{ buttonText || 'Book a Service' }}
     </router-link>

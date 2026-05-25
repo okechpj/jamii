@@ -1,39 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 
 :root {
-  --brand-indigo: #1a202c;
-  --brand-slate: #718096;
-  --brand-offwhite: #fffbf5;
+  --brand-indigo: #163300;
+  --brand-slate: #000000;
+  --brand-offwhite: #f2f5f7;
   --brand-white: #ffffff;
+  --brand-secondary-green: #163300;
   --slate-200: #e2e8f0;
 }
 
 .dark {
-  --brand-indigo: #f1f5f9;
-  --brand-slate: #94a3b8;
-  --brand-offwhite: #0f172a;
-  --brand-white: #1e293b;
-  --slate-200: #334155;
+  --brand-indigo: #f2f5f7;
+  --brand-slate: #a0a5a5;
+  --brand-offwhite: #121515;
+  --brand-white: #1c1f1f;
+  --brand-secondary-green: #4fb848;
+  --slate-200: #2e3333;
 }
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  --font-weight-black: 800;
+  --font-weight-black: 900;
 
   --color-brand-indigo: var(--brand-indigo);
-  --color-brand-gold: #3cb371;
-  --color-brand-gold-hover: #2e8b57;
+  --color-brand-gold: #4fb848;
+  --color-brand-gold-hover: #3fa038;
+  --color-brand-secondary-green: var(--brand-secondary-green);
   --color-brand-slate: var(--brand-slate);
   --color-brand-offwhite: var(--brand-offwhite);
   --color-brand-white: var(--brand-white);
 
-  /* Standardize borders to #E2E8F0 divider color */
+  /* Standardize borders to divider color */
   --color-slate-200: var(--slate-200);
 
   /* Enforce clean 8px modern corners */
@@ -54,27 +57,27 @@ body,
 #app {
   background-color: var(--brand-offwhite) !important;
   color: var(--brand-slate) !important;
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   line-height: 1.6 !important;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Typography Headings Rule */
 h1, .hero-text, .page-title, .main-header {
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-weight: 800 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 900 !important;
   color: var(--brand-indigo) !important;
   letter-spacing: -0.02em !important;
 }
 
 h2, h3, h4, h5, h6, .card-header, .feature-title, .form-label, .nav-item {
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   font-weight: 700 !important;
   color: var(--brand-indigo) !important;
 }
 
 p, span, div, input, textarea, select {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Dark theme class overrides for existing standard utility classes */
@@ -108,4 +111,3 @@ p, span, div, input, textarea, select {
   color: var(--brand-indigo) !important;
   border-color: var(--slate-200) !important;
 }
-

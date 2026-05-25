@@ -57,7 +57,7 @@ const handleTabClick = (e: Event, tabId: string) => {
         <div
           class="flex items-center justify-center transition-all duration-200"
           :class="route.path === tab.to && tab.to !== '#'
-            ? 'bg-brand-gold text-white rounded-xl h-10 w-10 shadow-xs'
+            ? 'bg-brand-secondary-green text-white rounded-full h-10 w-10 shadow-xs'
             : 'text-brand-slate hover:text-brand-indigo h-10 w-10'"
         >
           <svg
@@ -73,7 +73,7 @@ const handleTabClick = (e: Event, tabId: string) => {
         </div>
         <span
           class="text-[10px] mt-0.5 transition-colors"
-          :class="route.path === tab.to && tab.to !== '#' ? 'text-brand-gold font-bold' : 'text-brand-slate font-medium'"
+          :class="route.path === tab.to && tab.to !== '#' ? 'text-brand-secondary-green font-bold' : 'text-brand-slate font-medium'"
         >
           {{ tab.label }}
         </span>

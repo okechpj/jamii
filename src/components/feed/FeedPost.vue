@@ -26,7 +26,7 @@ defineProps<{
         </div>
         <div>
           <div class="flex items-center">
-            <h3 class="font-bold text-brand-indigo text-sm">{{ post.userName }}</h3>
+            <h3 class="font-bold text-brand-slate text-sm">{{ post.userName }}</h3>
             <svg
               v-if="post.verified"
               xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ defineProps<{
 
     <!-- Content -->
     <div class="mb-3">
-      <p class="text-sm text-brand-indigo leading-snug whitespace-pre-line">{{ post.caption }}</p>
+      <p class="text-sm text-brand-slate leading-snug whitespace-pre-line">{{ post.caption }}</p>
       <div v-if="post.image" class="mt-3 rounded-xl overflow-hidden max-h-80 bg-slate-100">
         <img
           :src="post.image"

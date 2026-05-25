@@ -121,7 +121,7 @@ function viewProfile(id: number) {
                   <p class="mt-2 text-sm text-brand-slate">{{ req.message }}</p>
 
                   <div class="mt-3 flex items-center space-x-2">
-                    <button @click="acceptRequest(req.id)" class="px-4 py-2 bg-brand-gold hover:bg-brand-gold-hover text-white rounded-xl text-sm font-semibold transition-colors">Confirm</button>
+                    <button @click="acceptRequest(req.id)" class="px-4 py-2 bg-brand-gold hover:bg-brand-gold-hover text-brand-indigo rounded-xl text-sm font-semibold transition-colors">Confirm</button>
                     <button @click="declineRequest(req.id)" class="px-4 py-2 bg-brand-indigo/10 border border-transparent rounded-xl text-sm font-semibold text-brand-indigo hover:bg-brand-indigo/20 transition-colors">Delete</button>
                     <button @click="viewProfile(req.id)" class="text-sm text-brand-gold hover:underline font-semibold ml-2">View Profile</button>
                   </div>
@@ -187,7 +187,7 @@ function viewProfile(id: number) {
                     <div class="text-xs text-brand-slate">3 mutual friends</div>
                   </div>
                 </div>
-                <button class="px-3 py-1.5 bg-brand-gold text-white rounded-xl text-sm font-semibold hover:bg-brand-gold-hover transition-colors">Add</button>
+                <button class="px-3 py-1.5 bg-brand-gold text-brand-indigo rounded-xl text-sm font-semibold hover:bg-brand-gold-hover transition-colors">Add</button>
               </li>
               <li class="flex items-center justify-between gap-3 p-3 rounded-xl border border-slate-200 hover:border-brand-gold/30 transition bg-brand-indigo/5">
                 <div class="flex items-center gap-3">

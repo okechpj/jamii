@@ -178,7 +178,7 @@ function attachPlaceholder() {
                     <p class="mt-1 truncate text-xs text-brand-slate font-medium">{{ conv.latestMessage }}</p>
                     <div class="mt-2 flex items-center justify-between text-[10px] text-brand-slate">
                       <span>{{ conv.status }}</span>
-                      <span v-if="conv.unread" class="rounded-xl bg-brand-gold px-1.5 py-0.5 text-[10px] font-bold text-white">
+                      <span v-if="conv.unread" class="rounded-xl bg-brand-gold px-1.5 py-0.5 text-[10px] font-bold text-brand-indigo">
                         {{ conv.unread }}
                       </span>
                     </div>
@@ -258,7 +258,7 @@ function attachPlaceholder() {
                 />
                 <button
                   @click="sendMessage"
-                  class="inline-flex h-10 items-center justify-center rounded-xl bg-brand-gold px-4 text-xs font-bold text-white shadow-xs hover:bg-brand-gold-hover transition"
+                  class="inline-flex h-10 items-center justify-center rounded-xl bg-brand-gold px-4 text-xs font-bold text-brand-indigo shadow-xs hover:bg-brand-gold-hover transition"
                 >
                   Send
                 </button>
